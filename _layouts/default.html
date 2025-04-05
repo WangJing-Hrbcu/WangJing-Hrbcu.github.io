@@ -1,96 +1,170 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang }}">
 <head>
-  <meta charset="UTF-8">
-  <title>{{ page.title }}</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/assets/style.css">
-  <style>
-    .navbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      background-color: #f0f0f0;
-      border-bottom: 1px solid #ddd;
-      padding: 0 1rem;
-    }
-    .navbar-logo {
-      font-size: 16px;
-      font-weight: bold;
-      white-space: nowrap;
-      padding: 0.75rem 0;
-      margin-right: auto;
-    }
-    .navbar-toggle {
-      display: none;
-      font-size: 1.5rem;
-      padding: 0.75rem 1rem;
-      cursor: pointer;
-    }
-    .navbar-links {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      flex-wrap: wrap;
-      margin-left: auto;
-    }
-    .navbar a {
-      padding: 0.75rem 0;
-      text-decoration: none;
-      color: #333;
-      background-color: #f0f0f0;
-      border: none;
-      border-radius: 0;
-      margin: 0;
-      text-align: center;
-      flex: none;
-      width: 120px;
-      font-size: 15px;
-      line-height: 1.2;
-    }
-    .navbar a:hover {
-      background-color: #ddd;
-    }
-    .navbar a.active {
-      border-bottom: 3px solid #007acc;
-      font-weight: bold;
-    }
+    <meta charset="UTF-8">
+    <title>{{ page.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/assets/style.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
 
-    @media (max-width: 600px) {
-      .navbar {
-        flex-wrap: nowrap;
-      }
-      .navbar-toggle {
-        display: block;
-      }
-      .navbar-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        margin-left: 0;
-      }
-      .navbar-links.show {
-        display: flex;
-      }
-      .navbar a {
-        width: 100%;
-      }
-    }
-  </style>
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #f0f0f0;
+            border-bottom: 1px solid #ddd;
+            padding: 0 1rem;
+            position: relative;
+            z-index: 100;
+        }
+
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            font-size: 20px;
+            font-weight: bold;
+            font-family: Georgia, 'Times New Roman', serif;
+            white-space: nowrap;
+            padding: 0.75rem 0;
+        }
+
+        .navbar-logo img {
+            height: 36px;
+            margin-right: 10px;
+        }
+
+        .navbar-toggle {
+            display: none;
+            font-size: 1.5rem;
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+        }
+
+        .navbar-links {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-left: auto;
+            justify-content: flex-end;
+
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-left: auto;
+        }
+
+        .navbar a {
+            padding: 0.75rem 0;
+            text-decoration: none;
+            color: #333;
+            background-color: #f0f0f0;
+            border: none;
+            border-radius: 0;
+            margin: 0;
+            text-align: center;
+            flex: none;
+            width: 120px;
+            font-size: 15px;
+            line-height: 1.2;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+        }
+
+        .navbar a.active {
+            border-bottom: 3px solid #007acc;
+            font-weight: bold;
+        }
+
+
+        .navbar-close {
+            display: none;
+        }
+
+        @media (max-width: 800px) {
+            .navbar-close {
+                display: block;
+            }
+
+            .navbar {
+                flex-wrap: nowrap;
+            }
+
+            .navbar-toggle {
+                display: block;
+            }
+
+            .navbar-links {
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                margin-left: auto;
+                justify-content: flex-start;
+
+                display: none;
+                flex-direction: column;
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100vh;
+                width: 100vw;
+                background-color: #f8f8f8;
+
+                z-index: 2000;
+            }
+
+            .navbar-links.show {
+                display: flex;
+            }
+
+            .navbar a {
+                width: 100%;
+                border-bottom: 1px solid #ddd;
+            }
+
+            .navbar-close {
+                top: 0;
+                right: 0;
+                padding: 1rem;
+                font-size: 1.5rem;
+                color: #666;
+                text-decoration: none;
+                background-color: #f0f0f0;
+                border-bottom: 1px solid #ddd;
+                width: auto;
+            }
+
+            width: 100%;
+            text-align: right;
+            padding: 1rem;
+            font-size: 1.5rem;
+            color: #666;
+            text-decoration: none;
+            background-color: #f0f0f0;
+        }
+
+        }
+    </style>
 </head>
 <body>
-  <nav class="navbar">
+<nav class="navbar">
     <div class="navbar-logo">
-      {% if page.lang == 'zh' %}
+        <img src="/assets/images/hbu-logo.png" alt="校徽">
+        {% if page.lang == 'zh' %}
         王晶博士课题组
-      {% else %}
+        {% else %}
         Dr. WANG Jing's Research Group
-      {% endif %}
+        {% endif %}
     </div>
     <span class="navbar-toggle" onclick="toggleNavbar()">☰</span>
     <div class="navbar-links" id="navbarLinks">
-      {% if page.lang == 'zh' %}
+        <a href="javascript:void(0);" class="navbar-close" onclick="toggleNavbar()">✕</a>
+        {% if page.lang == 'zh' %}
         <a href="/zh/" class="{% if page.url == '/zh/' %}active{% endif %}">首页</a>
         <a href="/zh/research/" class="{% if page.url contains '/zh/research' %}active{% endif %}">研究方向</a>
         <a href="/zh/members/" class="{% if page.url contains '/zh/members' %}active{% endif %}">成员介绍</a>
@@ -98,27 +172,28 @@
         <a href="/zh/contact/" class="{% if page.url contains '/zh/contact' %}active{% endif %}">联系我们</a>
         {% assign other_lang_url = page.url | replace_first: '/zh', '/en' %}
         <a href="{{ other_lang_url }}">English</a>
-      {% else %}
+        {% else %}
         <a href="/en/" class="{% if page.url == '/en/' %}active{% endif %}">Home</a>
         <a href="/en/research/" class="{% if page.url contains '/en/research' %}active{% endif %}">Research</a>
         <a href="/en/members/" class="{% if page.url contains '/en/members' %}active{% endif %}">Members</a>
-        <a href="/en/publications/" class="{% if page.url contains '/en/publications' %}active{% endif %}">Publications</a>
+        <a href="/en/publications/"
+           class="{% if page.url contains '/en/publications' %}active{% endif %}">Publications</a>
         <a href="/en/contact/" class="{% if page.url contains '/en/contact' %}active{% endif %}">Contact</a>
         {% assign other_lang_url = page.url | replace_first: '/en', '/zh' %}
         <a href="{{ other_lang_url }}">中文</a>
-      {% endif %}
+        {% endif %}
     </div>
-  </nav>
+</nav>
 
-  <main>
+<main>
     {{ content }}
-  </main>
+</main>
 
-  <script>
+<script>
     function toggleNavbar() {
-      const links = document.getElementById('navbarLinks');
-      links.classList.toggle('show');
+        const links = document.getElementById('navbarLinks');
+        links.classList.toggle('show');
     }
-  </script>
+</script>
 </body>
 </html>
