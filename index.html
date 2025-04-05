@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Redirecting...</title>
+    <script>
+        const lang = navigator.language || navigator.userLanguage;
+        if (lang.startsWith('zh')) {
+            window.location.href = "/zh/";
+        } else {
+            window.location.href = "/en/";
+        }
+    </script>
+</head>
+<body>
+<p>Redirecting based on browser language...</p>
+</body>
+</html>

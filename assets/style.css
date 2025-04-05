@@ -1,0 +1,103 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: #f0f0f0;
+  border-bottom: 1px solid #ddd;
+  padding: 0;
+}
+.navbar a {
+  padding: 0.75rem 0;
+  text-decoration: none;
+  color: #333;
+  background-color: #f0f0f0;
+  border: none;
+  border-radius: 0;
+  margin: 0;
+  text-align: center;
+  flex: none;
+  width: 120px;
+  font-size: 15px;
+  line-height: 1.2;
+}
+.navbar a:hover {
+  background-color: #ddd;
+}
+.navbar-toggle {
+  display: none;
+  font-size: 1.5rem;
+  margin-left: auto;
+  padding: 0.6rem;
+  cursor: pointer;
+}
+.navbar-links {
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+}
+.navbar-left {
+  display: flex;
+  flex-grow: 1;
+}
+.navbar-right {
+  display: flex;
+}
+@media (max-width: 600px) {
+  .navbar-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+  }
+  .navbar-links.show {
+    display: flex;
+  }
+  .navbar-left, .navbar-right {
+    flex-direction: column;
+    width: 100%;
+  }
+  .navbar a {
+    width: 100%;
+  }
+}
+
+/* 成员介绍页面样式 */
+.members-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.member-card {
+  flex: 1 1 calc(33.333% - 1rem);
+  box-sizing: border-box;
+  margin: 0.5rem;
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+}
+.member-card img {
+  max-width: 100%;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+}
+@media (max-width: 768px) {
+  .member-card {
+    flex: 1 1 calc(50% - 1rem);
+  }
+}
+@media (max-width: 480px) {
+  .member-card {
+    flex: 1 1 100%;
+  }
+}
