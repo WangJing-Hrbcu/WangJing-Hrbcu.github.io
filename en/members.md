@@ -2,23 +2,42 @@
 layout: default
 title: Members
 permalink: /en/members/
+hero_text: Members
+hero_image: /assets/images/hrbcu-other.jpg
 ---
 
-# Members
+## Principal Investigator
+
+<div class="members-container">  
+  <div class="member-card">
+    <img src="/assets/images/members/WANG_Jing.png" alt="王晶">
+    <div class="member-info">
+    <h3>WANG Jing, Ph.D.</h3>
+    <p>Associate Professor</p>
+    </div>
+  </div>
+</div>
+
+## Current Members
+
+## Alumni
 
 <div class="members-container">
+
   <div class="member-card">
-    <img src="https://via.placeholder.com/150" alt="Alice Zhang">
-    <h3>Dr. Alice Zhang</h3>
-    <p>Professor</p>
-    <p>AI and Machine Learning</p>
-    <p>Email: <a href="mailto:alice@example.com">alice@example.com</a></p>
+    <img src="/assets/images/member1.jpg" alt="成员1">
+    <div class="member-info">
+        <h3>Dr. Alice Zhang</h3>
+        <p>AI and Machine Learning</p>
+    </div>
   </div>
+
   <div class="member-card">
-    <img src="https://via.placeholder.com/150" alt="Bob Li">
-    <h3>Dr. Bob Li</h3>
-    <p>Associate Professor</p>
-    <p>Computational Neuroscience</p>
-    <p>Email: <a href="mailto:bob@example.com">bob@example.com</a></p>
+    <img src="/assets/images/member2.jpg" alt="成员2">
+    <div class="member-info">
+        <h3>Dr. Bob Li</h3>
+        <p>Computational Neuroscience</p>
+    </div>
   </div>
+
 </div>

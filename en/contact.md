@@ -2,8 +2,9 @@
 layout: default
 title: Contact
 permalink: /en/contact/
+hero_text: Contact
+hero_image: /assets/images/hrbcu-other.jpg
 ---
 
-# Contact
-
-This is the English version of the contact page.
+## Email of Principal Investigator
+* <a href="mailto:wangwangmayong@126.com">wangwangmayong@126.com</a>
